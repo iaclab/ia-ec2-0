@@ -7,8 +7,8 @@ provider "aws" {
 module "ec2_cluster" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  name  = "my-cluster"
-  count = 2
+  name  = "${var.ec2_cluster_name}"
+  count = "${var.ec2_count}"
 
   ami                    = "ami-d834aba1"
   instance_type          = "t2.micro"
